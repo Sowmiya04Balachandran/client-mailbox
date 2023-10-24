@@ -1,15 +1,16 @@
-import React, { Fragment} from "react";
+import React, { Fragment,useEffect} from "react";
 import { FaRegStar, FaRegSquare, FaTrash } from "react-icons/fa";
 import classes from "./Inbox.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { removeItemFromEmail } from "../../store/inbox-slice";
 import {NavLink } from "react-router-dom";
+import { replaceEmail } from "../../store/inbox-slice";
 // import {addItemToEmail} from '../../store/inbox-slice';
 import { Nav } from "react-bootstrap";
 
 const Inbox = () => {
   const email = useSelector((state) => state.inbox.emails);
-  // const emails=localStorage.getItem('endpoint')
+   //const emails=localStorage.getItem('endpoint')
   const dispatch = useDispatch();
 
   const containerStyle = {
@@ -62,7 +63,32 @@ const Inbox = () => {
 //     getData();
 //   },[]);
 
+// /*----------------------------->2 second intervaldatabse-------------------*/
 
+useEffect(() => {
+  const pollingInterval = 2000; // Poll every 2 seconds
+
+  const fetchNewEmails = async () => {
+    try {
+      const response = await fetch('https://mail-box-87267-default-rtdb.firebaseio.com');
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data)
+        
+    
+        // Process new emails and update your state
+        dispatch(replaceEmail(email));
+      }
+    } catch (error) {
+      console.error('Error fetching new emails:', error);
+    }
+  };
+
+  const polling = setInterval(fetchNewEmails, pollingInterval);
+
+  // Clear the interval when the component unmounts
+  return () => clearInterval(polling);
+}, [dispatch,email]);
 
 
 
