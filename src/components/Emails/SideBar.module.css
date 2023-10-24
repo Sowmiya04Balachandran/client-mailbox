@@ -1,8 +1,7 @@
-/* SideBar.module.css */
 .centerStyles {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start; /* Change 'start' to 'flex-start' */
   height: 100vh;
   width: 14rem;
   backdrop-filter: blur(8px);
@@ -16,28 +15,4 @@
   width: 8rem;
   margin-left: 2rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-  /* Your existing styles for centerStyles and composeStyleHandler */
-
-.nav-link {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 0;
-  color: #333; /* Text color */
-  text-decoration: none;
-  transition: color 0.3s; /* Smooth color transition on hover */
-}
-
-.nav-link:hover {
-  color: #6f42c1; /* Change color on hover */
-}
-
-.nav-link span {
-  margin-left: 1rem; /* Space between icon and label */
-}
-
-/* Additional styles for icons (if needed) */
-.nav-link .icon {
-  font-size: 1.2rem;
 }

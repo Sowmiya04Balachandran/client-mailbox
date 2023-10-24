@@ -13,6 +13,7 @@ import Message from "./components/Emails/Message";
 // import Unseend from './components/Emails/Unseend';
 import SideBar from "./components/Emails/SideBar";
 import { sendEmailData, getEmailData } from "./store/action-thunk";
+import Sent from "./components/Emails/Sent";
 
 let isInitial = true;
 function App() {
@@ -57,6 +58,13 @@ function App() {
               />
 
               <Route exact path="/inbox" element={isLoggedIn && <Inbox />} />
+              <Route
+                exact
+                path="/inbox/:inboxId"
+                element={isLoggedIn && <Message />}
+              />
+
+              <Route exact path="/send" element={isLoggedIn && <Sent />} />
               <Route
                 exact
                 path="/inbox/:inboxId"

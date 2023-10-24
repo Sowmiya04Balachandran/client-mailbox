@@ -166,7 +166,7 @@ const SideBar = () => {
                   <span>
                     <FaPaperPlane />
                   </span>
-                  <span style={{ marginLeft: "0.4rem" }}> Sent</span>
+                  <span style={{ marginLeft: "0.4rem" }}> Sent<span>{totalQuantity}</span></span>
                 </Nav.Link>
               )}
             </div>
