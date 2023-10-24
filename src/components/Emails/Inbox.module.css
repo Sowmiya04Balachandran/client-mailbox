@@ -1,0 +1,6 @@
+.hover:hover{
+    background-color: #b088ed5a;
+    border-radius: 2px;
+    backdrop-filter: blur(4px);
+    
+}

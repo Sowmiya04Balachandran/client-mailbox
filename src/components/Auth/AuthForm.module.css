@@ -1,0 +1,49 @@
+/* body {
+    background-image: url('../../asset/2.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    overflow: hidden;
+  }
+  AuthForm.module.css */
+
+.backHandler {
+    /* background-image: url('../../asset/2.gif');
+    height: 91.2vh;
+    overflow: hidden; */
+    background-image: url('../../asset/2.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width:100%;
+    height: 100vh; /* Set to 100vh to cover the full viewport height */
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .formContainer {
+    max-width: 25rem;
+    padding-top: 7rem;
+  }
+  
+  .form {
+    background-color: #52b788;
+    border-radius: 0.3rem;
+    opacity: 0.8;
+    overflow: hidden;
+    align-items: center;
+  }
+  
+  .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem;
+    margin-top: 1rem;
+  }
+  
+  /* Add more styles as needed */
+  
